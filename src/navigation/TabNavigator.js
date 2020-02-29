@@ -1,11 +1,7 @@
 import * as React from "react";
-
+import { Theme } from "../constants/Constants";
 //--- Screens
-import Home from "../screens/Home";
-import Carte from "../screens/Carte";
-import Clients from "../screens/Clients";
-import Favoris from "../screens/Favoris";
-import Plus from "../screens/Plus";
+import { Carte, Clients, Favoris, Home, Plus } from "../screens";
 
 //--- Tabnavigator
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -16,6 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigator() {
   return (
     <Tab.Navigator
+      // screenOptions
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color }) => {
           let iconName;
@@ -34,6 +31,17 @@ export default function TabNavigator() {
           return <FontAwesome name={iconName} size={26} color={color} />;
         }
       })}
+      // tabBarOptions
+      tabBarOptions={{
+        activeTintColor: "tomato",
+        inactiveTintColor: "#909090",
+        style: {
+          backgroundColor: Theme.AppColor,
+          height: 60,
+          paddingTop: 10,
+          paddingBottom: 5
+        }
+      }}
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Carte" component={Carte} />
