@@ -5,5 +5,6 @@ import Home from "./Home";
 import Settings from "./Settings";
 import Login from "./Authentication/Login";
 import SignUp from "./Authentication/SignUp";
+import FilterScreen from "./FilterScreen";
 
-export { Carte, Clients, Favoris, Home, Settings, Login, SignUp };
+export { Carte, Clients, Favoris, Home, Settings, Login, SignUp, FilterScreen };
