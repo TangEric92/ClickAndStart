@@ -6,7 +6,7 @@ import { Theme } from "./src/constants/Constants";
 const Stack = createStackNavigator();
 
 import TabNavigator from "./src/navigation/TabNavigator";
-import { Login, SignUp, Filter, FilterScreen } from "./src/screens";
+import { Login, SignUp, Filter, FilterScreen, ItemDetail } from "./src/screens";
 
 export default function App() {
   //-- optionHeader
@@ -32,6 +32,7 @@ export default function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Filter" component={FilterScreen} />
+        <Stack.Screen name="ItemDetail" component={ItemDetail} />
 
         <Stack.Screen
           options={optionHeader}
