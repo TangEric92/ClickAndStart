@@ -2,6 +2,6 @@ import Carte from "./Carte";
 import Clients from "./Clients";
 import Favoris from "./Favoris";
 import Home from "./Home";
-import Plus from "./Plus";
+import Settings from "./Settings";
 
-export { Carte, Clients, Favoris, Home, Plus };
+export { Carte, Clients, Favoris, Home, Settings };

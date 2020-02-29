@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { View, Text } from "react-native";
 
-function Plus() {
+function Settings() {
   return (
     <View>
-      <Text>Plus</Text>
+      <Text>Settings</Text>
     </View>
   );
 }
 
-export default Plus;
+export default Settings;

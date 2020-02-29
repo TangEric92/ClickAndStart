@@ -1,20 +1,38 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StatusBar } from "react-native";
-
+import { Text, StatusBar } from "react-native";
+import { Theme } from "./src/constants/Constants";
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 import TabNavigator from "./src/navigation/TabNavigator";
 
 export default function App() {
+  //-- optionHeader
+  const optionHeader = {
+    headerStyle: { backgroundColor: Theme.AppColor, height: 90 },
+    headerTitle: () => (
+      <Text style={{ color: "white", fontSize: 25, textAlign: "center" }}>
+        {Theme.AppName}
+      </Text>
+    ),
+    headerLeft: () => (
+      <Text style={{ color: "white", fontSize: 25 }}>Left</Text>
+    ),
+    headerRight: () => (
+      <Text style={{ color: "white", fontSize: 25 }}>Right</Text>
+    )
+  };
+
   return (
     <NavigationContainer>
       <StatusBar barStyle="light-content" />
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={TabNavigator} />
+        <Stack.Screen
+          options={optionHeader}
+          name={Theme.AppName}
+          component={TabNavigator}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Theme } from "../constants/Constants";
 //--- Screens
-import { Carte, Clients, Favoris, Home, Plus } from "../screens";
+import { Carte, Clients, Favoris, Home, Settings } from "../screens";
 
 //--- Tabnavigator
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -25,7 +25,7 @@ export default function TabNavigator() {
             iconName = focused ? "user" : "user";
           } else if (route.name === "Favoris") {
             iconName = focused ? "heart" : "heart";
-          } else if (route.name === "Plus") {
+          } else if (route.name === "Settings") {
             iconName = focused ? "th-list" : "th-list";
           }
           return <FontAwesome name={iconName} size={26} color={color} />;
@@ -47,7 +47,7 @@ export default function TabNavigator() {
       <Tab.Screen name="Carte" component={Carte} />
       <Tab.Screen name="Clients" component={Clients} />
       <Tab.Screen name="Favoris" component={Favoris} />
-      <Tab.Screen name="Plus" component={Plus} />
+      <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 }
