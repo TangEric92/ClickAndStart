@@ -107,5 +107,14 @@ export default styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     width: 125
+  },
+  input: {
+    color: "white",
+    fontSize: 24,
+    height: 54,
+    width: "75%",
+    borderBottomColor: "white",
+    borderBottomWidth: 1,
+    paddingLeft: 15
   }
 });
