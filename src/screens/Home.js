@@ -1,6 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import { View, Text, ActivityIndicator, FlatList } from "react-native";
 import ListItem from "../components/ListItem";
+import Header from "../components/FilterHeaderBar/Header";
+import { GlobalFilter } from "../constants/FIltersGroups";
+
 function Home(props) {
   const { datas } = props;
   if (!datas) {
@@ -8,6 +11,7 @@ function Home(props) {
   }
   return (
     <View>
+      <Header filtersList={GlobalFilter.ServicesFilters} />
       <FlatList
         data={datas}
         keyExtractor={item => item.placeId}
