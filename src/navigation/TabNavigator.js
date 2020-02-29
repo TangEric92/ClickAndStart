@@ -1,8 +1,8 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { Theme } from "../constants/Constants";
 //--- Screens
 import { Carte, Clients, Favoris, Home, Settings } from "../screens";
-
+import axios from "axios";
 //--- Tabnavigator
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
@@ -10,6 +10,19 @@ import { FontAwesome, Ionicons } from "@expo/vector-icons";
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigator() {
+  const [datas, setDatas] = useState();
+  useEffect(() => {
+    axios
+      .get(
+        "https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json"
+      )
+      .then(response => {
+        setDatas(response.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }, []);
   return (
     <Tab.Navigator
       // screenOptions
@@ -43,7 +56,7 @@ export default function TabNavigator() {
         }
       }}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home">{() => <Home datas={datas} />}</Tab.Screen>
       <Tab.Screen name="Carte" component={Carte} />
       <Tab.Screen name="Clients" component={Clients} />
       <Tab.Screen name="Favoris" component={Favoris} />
