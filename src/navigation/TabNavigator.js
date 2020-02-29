@@ -33,7 +33,7 @@ export default function TabNavigator() {
       })}
       // tabBarOptions
       tabBarOptions={{
-        activeTintColor: "tomato",
+        activeTintColor: Theme.AppSelectedColor,
         inactiveTintColor: "#909090",
         style: {
           backgroundColor: Theme.AppColor,

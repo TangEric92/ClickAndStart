@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Constants from "expo-constants";
 import { Entypo } from "@expo/vector-icons";
 import {
   Text,
   View,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
   KeyboardAvoidingView
 } from "react-native";
 import { Theme } from "../../constants/Constants";
